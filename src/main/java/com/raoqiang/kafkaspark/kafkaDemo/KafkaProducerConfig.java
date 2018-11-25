@@ -25,15 +25,15 @@ import java.util.Map;
 public class KafkaProducerConfig {
 
     @Value("${kafka.producer.servers}")
-    private String servers;
+    private String servers; // broker节点和端口，若为集群模式，避免某个节点挂掉，可以写多个，以逗号连接
     @Value("${kafka.producer.retries}")
-    private int retries;
+    private int retries; // 发送失败重试次数
     @Value("${kafka.producer.batch.size}")
-    private int batchSize;
+    private int batchSize; // message 批量发送大小
     @Value("${kafka.producer.linger}")
-    private int linger;
+    private int linger; // 减少request发送的数量，但是在无负载下会增加x ms的发送时延
     @Value("${kafka.producer.buffer.memory}")
-    private int bufferMemory;
+    private int bufferMemory; // Producer可以用来缓存数据的内存大小。该值实际为RecordAccumulator类中的BufferPool，即Producer所管理的最大内存。
 
 
     private Map<String, Object> producerConfigs() {
