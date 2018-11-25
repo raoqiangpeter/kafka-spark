@@ -5,7 +5,7 @@ kafka 和 spark学习
 
 ### 第一步，下载
 
-windows 环境和 linux环境脚本不一致，Windows环境启动脚本路径为bin\windows\*.bat，而linux路径为bin/*.shell。<br/>
+windows 环境和 linux环境脚本不一致，Windows环境启动脚本路径为bin\windows\\*.bat，而linux路径为bin/*.shell。<br/>
 以 windows 为例，官网下载 http://kafka.apache.org/ (kafka_2.11-2.0.1，2.11表示scala版本，2.0.1表示kafka版本)：
 
 ### 第二步，启动服务
