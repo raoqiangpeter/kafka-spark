@@ -37,6 +37,7 @@ public class KafkaProducerConfig {
 
 
     private Map<String, Object> producerConfigs() {
+        // test
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, servers);
         props.put(ProducerConfig.RETRIES_CONFIG, retries);
