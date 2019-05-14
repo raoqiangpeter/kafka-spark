@@ -18,7 +18,7 @@ kafka启动必须先启动zookeeper，如果没有自己的zookeeper服务，这
 3，创建topic<br/><br/>
 <code>bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 5 --topic test</code><br/>
 replication-factor代表可用副本数量，partitions代表分区数量.<br/>
-查看创建的所以topic <code>bin\windows\kafka-topics.bat --list --zookeeper localhost:2181</code>.<br/>
+查看创建的所有topic <code>bin\windows\kafka-topics.bat --list --zookeeper localhost:2181</code>.<br/>
 查看创建的topic详细信息 <code>bin\windows\kafka-topics.bat --describe --zookeeper localhost:2181 --topic test</code>.<br/>
 ```
 Topic:test      PartitionCount:5        ReplicationFactor:1     Configs:
@@ -34,8 +34,8 @@ Topic:test      PartitionCount:5        ReplicationFactor:1     Configs:
 >"isr" is the set of "in-sync" replicas. This is the subset of the replicas list that is currently alive and caught-up to the leader.<br/>
  
 4，启动生产者，向topic发送message<br/><br/>
-`bin\windows\kafka-console-producer.sh --broker-list localhost:9092 --topic test`<br/>
+`bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test`<br/>
 可在命令行输入发送的message内容<br/><br/>
 5，启动消费者，消费指定topic的message<br/><br/>
-`bin\windows\kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning`<br/>
+`bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning`<br/>
 任何在生产者窗口输入的message将会在消费者窗口展示
